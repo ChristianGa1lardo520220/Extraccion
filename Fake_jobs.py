@@ -8,6 +8,7 @@ response = requests.get("https://realpython.github.io/fake-jobs/")
 print(response.status_code)
 #print(response.content)
 textos = []
+
 if response.status_code == 200:
     soup = BeautifulSoup(response.content, "html.parser")
     lista_divs = soup.find_all("div", attrs={"class":"card-content"})
